@@ -1,13 +1,13 @@
 from brownie import FundMe,accounts
 from scripts.helpful_scripts import  get_account
+##2022_05_16留念
 def fund():
     
     fund_me=FundMe[-1]
     print(fund_me)
     account=get_account()
     print(fund_me.getPrice())
-    # entrance_fee=fund_me.getEntranceFee()
-    entrance_fee =500000
+    entrance_fee=fund_me.getEntranceFee()
     print(entrance_fee)
     print(f'the current entry fee is {entrance_fee}')
     fund_me.fund({"from":account,'value':entrance_fee})
